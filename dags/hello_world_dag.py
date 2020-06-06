@@ -14,20 +14,12 @@ def hello_world() -> None:
 
 
 default_args = {
-    'depends_on_past': False,
-    'start_date': days_ago(2),
+    "depends_on_past": False,
+    "start_date": days_ago(2),
 }
 
-dag = DAG(
-    'hello_world_dag',
-    default_args=default_args,
-    schedule_interval='@once',
-)
+dag = DAG("hello_world_dag", default_args=default_args, schedule_interval="@once",)
 
-t1 = PythonOperator(
-    task_id='print_task',
-    python_callable=hello_world,
-    dag=dag,
-)
+t1 = PythonOperator(task_id="print_task", python_callable=hello_world, dag=dag,)
 
 t1
