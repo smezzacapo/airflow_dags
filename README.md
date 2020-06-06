@@ -6,4 +6,5 @@ Airflow Dag Files + Tests
 TODO
 
 -Nox with poetry
--Linting
+-Linting (Flake8 / Black / Bandit)
+
