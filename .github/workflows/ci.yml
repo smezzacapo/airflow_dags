@@ -43,5 +43,8 @@ jobs:
       - name: Linting
         run: poetry run flake8 .
 
+      - name: Initialize Airflow MetadataDB
+        run: poetry run airflow initdb
+
       - name: Test with pytest
         run: poetry run pytest .
