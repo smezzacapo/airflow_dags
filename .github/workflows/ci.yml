@@ -55,7 +55,7 @@ jobs:
       - name: Push DAGs to docker-airflow
         run: |
           git config --global user.name "smezzacapo"
-          git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/smezzacapo/docker-airflow zip_target
+          git clone https://.:${{ secrets.TOKEN }}@github.com/smezzacapo/docker-airflow zip_target
           cd zip_target
           git checkout master
           git status
