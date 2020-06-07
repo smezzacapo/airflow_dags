@@ -50,7 +50,12 @@ jobs:
         run: poetry run pytest .
 
       - name: Zip DAGs
-        run: zip -r dags_1.0.0.zip dags/*
+        run: |
+          cd dags
+          rm *.pyc
+          rm -rf __pycache__
+          zip -r ../dags_1.0.0.zip *
+          cd ..
 
       - name: Push DAGs to docker-airflow
         run: |
