@@ -52,7 +52,7 @@ jobs:
       - name: Zip DAGs
         run: |
           cd dags
-          rm *.pyc
+          rm -f *.pyc
           rm -rf __pycache__
           zip -r ../dags_1.0.0.zip *
           cd ..
