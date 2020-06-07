@@ -54,9 +54,9 @@ jobs:
 
       - name: Push DAGs to docker-airflow
         run: |
-          git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/smezzacapo/docker-airflow target
-          rm target/dags/dags_1.0.0.zip
-          cp dags_1.0.0.zip target/dags/dags_1.0.0.zip
-          git add target
+          git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/smezzacapo/docker-airflow zip_target
+          rm zip_target/dags/dags_1.0.0.zip
+          cp dags_1.0.0.zip zip_target/dags/dags_1.0.0.zip
+          git add zip_target
           git commit -m "Automatic DAG push"
-          git push target master
+          git push zip_target master
