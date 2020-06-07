@@ -60,4 +60,4 @@ jobs:
           cp dags_1.0.0.zip zip_target/dags/dags_1.0.0.zip
           git add zip_target
           git commit -m "Automatic DAG push"
-          git push zip_target master
+          git push zip_target origin master
