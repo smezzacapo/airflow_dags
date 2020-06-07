@@ -56,14 +56,14 @@ jobs:
         run: |
           git config --global user.name "smezzacapo"
           git clone https://.:${{ secrets.GITHUB_TOKEN }}@github.com/smezzacapo/docker-airflow zip_target
-          git status
+          cd zip_target
           git checkout master
           git status
-          rm zip_target/dags/dags_1.0.0.zip
-          cp dags_1.0.0.zip zip_target/dags/dags_1.0.0.zip
+          rm dags/dags_1.0.0.zip
+          cp ../dags_1.0.0.zip dags/dags_1.0.0.zip
           git status
-          git add zip_target
+          git add .
           git status
           git commit -m "Automatic DAG push"
           git status
-          git push zip_target master
+          git push
